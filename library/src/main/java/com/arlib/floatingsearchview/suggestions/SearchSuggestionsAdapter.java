@@ -51,7 +51,7 @@ public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.
     protected int mTextColor = -1;
     protected int mRightIconColor = -1;
 
-    protected interface OnBindSuggestionCallback {
+    public interface OnBindSuggestionCallback {
 
         void onBindSuggestion(View suggestionView, ImageView leftIcon, TextView textView,
                               SearchSuggestion item, int itemPosition);
