@@ -1280,8 +1280,7 @@ public class FloatingSearchView extends FrameLayout {
             }
         });
 
-        mSuggestionsAdapter = new SearchSuggestionsAdapter(getContext(), mSuggestionsTextSizePx,
-                new SearchSuggestionsAdapter.Listener() {
+        mSuggestionsAdapter = newAdapterInstance(mSuggestionsTextSizePx, new SearchSuggestionsAdapter.Listener() {
 
                     @Override
                     public void onItemSelected(SearchSuggestion item) {
@@ -1309,6 +1308,7 @@ public class FloatingSearchView extends FrameLayout {
                         setQueryText(item.getBody());
                     }
                 });
+        
         refreshShowMoveUpSuggestion();
         mSuggestionsAdapter.setTextColor(this.mSuggestionTextColor);
         mSuggestionsAdapter.setRightIconColor(this.mSuggestionRightIconColor);
@@ -1319,6 +1319,10 @@ public class FloatingSearchView extends FrameLayout {
         //move up the suggestions section enough to cover the search bar
         //card's bottom left and right corners
         mSuggestionsSection.setTranslationY(-cardViewBottomPadding);
+    }
+
+    protected SearchSuggestionsAdapter newAdapterInstance(int suggestionTextSize, SearchSuggestionsAdapter.Listener listener){
+        return  new SearchSuggestionsAdapter(getContext(), suggestionTextSize,listener);
     }
 
     private void setQueryText(CharSequence text) {
