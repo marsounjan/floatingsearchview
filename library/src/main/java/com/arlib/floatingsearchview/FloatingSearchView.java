@@ -1308,7 +1308,7 @@ public class FloatingSearchView extends FrameLayout {
                         setQueryText(item.getBody());
                     }
                 });
-        
+
         refreshShowMoveUpSuggestion();
         mSuggestionsAdapter.setTextColor(this.mSuggestionTextColor);
         mSuggestionsAdapter.setRightIconColor(this.mSuggestionRightIconColor);
