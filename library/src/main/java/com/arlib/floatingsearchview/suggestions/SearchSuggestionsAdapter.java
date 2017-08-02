@@ -39,25 +39,25 @@ public class SearchSuggestionsAdapter extends RecyclerView.Adapter<RecyclerView.
 
     private static final String TAG = "SearchSuggestionsAdapter";
 
-    private List<? extends SearchSuggestion> mSearchSuggestions = new ArrayList<>();
+    protected List<? extends SearchSuggestion> mSearchSuggestions = new ArrayList<>();
 
-    private Listener mListener;
+    protected Listener mListener;
 
-    private Context mContext;
+    protected Context mContext;
 
-    private Drawable mRightIconDrawable;
-    private boolean mShowRightMoveUpBtn = false;
-    private int mBodyTextSizePx;
-    private int mTextColor = -1;
-    private int mRightIconColor = -1;
+    protected Drawable mRightIconDrawable;
+    protected boolean mShowRightMoveUpBtn = false;
+    protected int mBodyTextSizePx;
+    protected int mTextColor = -1;
+    protected int mRightIconColor = -1;
 
-    public interface OnBindSuggestionCallback {
+    protected interface OnBindSuggestionCallback {
 
         void onBindSuggestion(View suggestionView, ImageView leftIcon, TextView textView,
                               SearchSuggestion item, int itemPosition);
     }
 
-    private OnBindSuggestionCallback mOnBindSuggestionCallback;
+    protected OnBindSuggestionCallback mOnBindSuggestionCallback;
 
     public interface Listener {
 
